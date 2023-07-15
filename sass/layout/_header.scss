@@ -11,8 +11,6 @@
       flex-direction: column-reverse;
     }
   }
-
-
 }
 
 #menu {
@@ -25,7 +23,6 @@
   &:checked ~ .search-bar .menu-toogle__label {
     background-color: yellow;
   }
-
 }
 
 /* ------------------------------------- */
@@ -134,23 +131,23 @@
   &__bottom-bread {
     display: block;
     background-color: #333;
-    height: .2em;
+    height: 0.2em;
     position: absolute;
-    left: .5em;
-    right: .5em;
+    left: 0.5em;
+    right: 0.5em;
   }
 
   &__top-bread {
-    top: .8em;
+    top: 0.8em;
   }
 
   &__meat {
     top: 50%;
-    margin-top: -.1em;
+    margin-top: -0.1em;
   }
 
   &__bottom-bread {
-    bottom: .8em;
+    bottom: 0.8em;
   }
 
   @media (max-width: 768px) {
@@ -159,3 +156,5 @@
     }
   }
 }
+
+/* /* #FF0092,#FFCA1B,#B6FF00,#228DFF,#BA01FF,#FF0092,#FFCA1B,#B6FF00 * */
