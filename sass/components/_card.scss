@@ -18,30 +18,61 @@
 
 .cards-container {
   padding: 25px;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  column-gap: 15px;
-  row-gap: 15px;
-  background-color: green;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: auto;
   height: auto;
+  overflow-x: scroll;
+  scroll-snap-type: mandatory;
+  background-color: green;
+
+  &::-webkit-scrollbar {
+    -webkit-appearance: none;
+  }
+
+  &::-webkit-scrollbar:vertical {
+    width: 10px;
+  }
+
+  &::-webkit-scrollbar-button:increment,
+  &::-webkit-scrollbar-button {
+    display: none;
+  }
+
+  &::-webkit-scrollbar:horizontal {
+    height: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #797979;
+    border-radius: 20px;
+    border: 2px solid #f1f2f3;
+  }
+
+  &::-webkit-scrollbar-track {
+    border-radius: 10px;
+  }
 }
 
 .card {
   outline: none; /* Como el borde pero no ocupa espacio en la caja */
-  width: 80%;
-  max-width: 600px;
+
+  flex: 0 0 25%;
+  width: 100%;
+  object-fit: cover;
+  /* scroll-snap-align: center; */
   height: auto;
   min-height: 400px;
   max-height: 800px;
-  overflow: hidden; /* Si el contenido ocupa más espacio que el tamaño del contenedor. Queda oculto */
-  overflow-y: scroll;
+
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   background-color: orange;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2), 0 0 3px rgba(0, 0, 0, 0.3);
 
   transition: all 0.2s;
-  justify-self: center;
+  /* justify-self: center; */
 
   &:hover,
   &:focus {
@@ -127,6 +158,37 @@
     &:focus &__image-container {
       width: 40%;
       clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+
+    &__description {
+      overflow-y: scroll;
+      max-width: fit-content;
+      &::-webkit-scrollbar {
+        -webkit-appearance: none;
+      }
+
+      &::-webkit-scrollbar:vertical {
+        width: 10px;
+      }
+
+      &::-webkit-scrollbar-button:increment,
+      &::-webkit-scrollbar-button {
+        display: none;
+      }
+
+      &::-webkit-scrollbar:horizontal {
+        height: 10px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: #797979;
+        border-radius: 20px;
+        border: 2px solid #f1f2f3;
+      }
+
+      &::-webkit-scrollbar-track {
+        border-radius: 10px;
+      }
     }
   }
 }
